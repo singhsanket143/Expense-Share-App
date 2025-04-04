@@ -15,7 +15,12 @@ spring:
       connection-timeout: ${DB_CONNECTION_TIMEOUT} # Maximum time to wait for a connection from the pool
       pool-name: ${DB_POOL_NAME} # Name of the connection pool
 
+  flyway:
+    enabled: true
+    locations: classpath:db/migrations
 
   jpa:
+    hibernate:
+      ddl-auto: validate
     show-sql: true
 
